@@ -3,6 +3,9 @@
 using namespace std;
 int stack[10000];
 int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 	int n, num;
 	cin >> n;
 	string order;
