@@ -13,6 +13,9 @@ struct cmp {
 };
 
 int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 	int n;
 	cin >> n;
 	priority_queue<pair<int,int>,vector<pair<int,int>>, cmp>que;
@@ -30,5 +33,4 @@ int main() {
 				cout << 0<<"\n";
 		}
 	}
-
 }
