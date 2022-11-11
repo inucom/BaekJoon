@@ -1,14 +1,9 @@
-#include <iostream>
-using namespace std;
-int main() {
-	long long S;
-	cin >> S;
-	long long sum = 0, i =0;
-	while (true) {
-		i++;
-		sum += i;
-		if (sum > S)
-			break;
-	}
-	cout << i-1;
+#include <stdio.h>
+
+int main()
+{
+	long long int n,s=0,i;
+	scanf("%lld",&n);
+	for(i=1;s<=n;i++) s+=i;
+	printf("%d",i-2);
 }
