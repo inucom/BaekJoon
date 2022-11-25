@@ -15,7 +15,10 @@ int isPalindrome(string& s) {
 }
 
 int main() {
-    
+    cin.tie(NULL);
+    cout.tie(NULL);
+    cin.sync_with_stdio(false);
+
     int n;
     cin >> n;
     string input;
