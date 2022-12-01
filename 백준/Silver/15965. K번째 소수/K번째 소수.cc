@@ -4,7 +4,7 @@ bool arr[7500000] = { 1,1,0,0, };
 int main() {
 	int k;
 	cin >> k;
-	for (int i = 2; i <7500000 ; i++) {
+	for (int i = 2; i <=2740 ; i++) {
 		if (arr[i]) {
 			continue;
 		}
