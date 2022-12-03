@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-bool arr[11000] = { 1,0,0,0, };
+bool arr[1100] = { 1,0,0,0, };
 int main() {
 	string input;
 	cin >> input;
@@ -13,9 +13,9 @@ int main() {
 		else if (input[i] >= 'A' && input[i] <= 'Z')
 			sum += input[i] - 'A' + 27;
 	}
-	for (int i = 2; i <= 4000; i++) {
+	for (int i = 2; i <= 40; i++) {
 		if (arr[i])continue;
-		for (int j = i * 2; j < 11000; j += i) {
+		for (int j = i * 2; j < 1100; j += i) {
 			arr[j] = 1;
 		}
 	}
