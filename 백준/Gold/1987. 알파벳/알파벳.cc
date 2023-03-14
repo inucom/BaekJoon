@@ -57,6 +57,8 @@ void dfs(int r, int c,int x, int y, int cnt) {
 
 
 int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	int r, c;
 	cin >> r >> c;
 	string input;
