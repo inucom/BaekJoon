@@ -27,8 +27,8 @@ void bfs(int m, int n, int h) {
 }
 
 int main() {
-	//ios::sync_with_stdio(0);
-	//cin.tie(0);
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	int m, n,h;
 	cin >> m >> n>>h;
 	for (int k = 0; k < h; k++) {
