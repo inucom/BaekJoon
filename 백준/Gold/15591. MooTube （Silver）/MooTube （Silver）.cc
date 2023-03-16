@@ -3,40 +3,42 @@
 #include <vector>
 using namespace std;
 
-int dfs(int k, int v, vector<vector<pair<int,int>>>& adj, vector<bool>& visited) {
-    int cnt = 0; 
-    visited[v] = true;
-
-    for (auto u : adj[v]) {
-    
-        if (visited[u.first] || u.second < k) continue;
-
-        cnt++;
-        cnt += dfs(k, u.first, adj, visited);
-    }
-
-    return cnt;
+int bfs(int k, int v, vector<vector<pair<int,int>>>& adj) {
+	vector<bool>visited(adj.size(), false);
+	queue<int>q;
+	q.push(v);
+	visited[v] = true;
+	int result = 0;
+	while (!q.empty()) {
+		int from = q.front();
+		q.pop();
+		for (auto u : adj[from]) {
+			if (visited[u.first] || u.second < k) continue;
+			result++;
+			visited[u.first] = true;
+			q.push(u.first);
+		}
+	}
+	return result;
 }
 
 int main() {
-    int n, q;
-    cin >> n >> q;
+	int N, Q;
+	cin >> N >> Q;
+	int p, q, r;
 
-    vector<vector<pair<int,int>>> adj(n + 1);
-    for (int i = 0; i < n - 1; i++) {
-        int p, q, r;
-        cin >> p >> q >> r;
-        adj[p].push_back({q, r});
-        adj[q].push_back({p, r});
-    }
+	vector<vector<pair<int,int>>> adj(N+1);
+	
 
-    for (int i = 0; i < q; i++) {
-        int k, v;
-        cin >> k >> v;
-
-        vector<bool> visited(n + 1, false);
-        cout << dfs(k, v, adj, visited) << '\n';
-    }
-
-    return 0;
+	for (int i = 0; i < N - 1; i++) {
+		cin >> p >> q >> r;
+		adj[p].push_back({q, r});
+		adj[q].push_back({ p,r });	
+	}
+	int k, v;
+	for (int i = 0; i < Q; i++) {
+		cin >> k >> v;
+		int ans = bfs(k, v, adj);
+		cout << ans << "\n";
+	}
 }
