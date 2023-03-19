@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-long long dp[1000001];
+long long dp[1023];
 
 int main() {
 	int n;
