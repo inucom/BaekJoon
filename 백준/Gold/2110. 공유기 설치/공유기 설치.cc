@@ -13,7 +13,7 @@ int main() {
 	}
 	sort(arr, arr + n);
 
-	int start = 0, end = arr[n - 1] - arr[0];
+	int start = 0, end = 1000000000;
 	int dist = 0;
 	while (start <= end) {
 		int mid = (start + end) / 2;
